@@ -1,4 +1,4 @@
-# Text Summarization App
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=Text-Transformer&fontSize=100&animation=fadeIn&fontAlignY=38&theme=tokyonight)
 
 This is a web application that provides text summarization functionality using the Streamlit framework and the Transformers library.
 
