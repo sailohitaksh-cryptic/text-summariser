@@ -26,6 +26,6 @@ if st.button("Summarize"):
         st.write(f"Length of Summary: {len(summary_text.split(' '))}")
 
         # Copy to clipboard
-        st.button("Copy Summarized Text", to_copy=summary_text)
+        #st.button("Copy Summarized Text", to_copy=summary_text)
     else:
         st.warning("Please enter some text.")
