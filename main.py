@@ -3,7 +3,7 @@ from transformers import pipeline
 
 def summarize_text(article):
     summarizer = pipeline('summarization')
-    summary = summarizer(article, max_length=180, min_length=30, do_sample=False)
+    summary = summarizer(article, max_length=round((len(article.split(' ')))*0.40), min_length=30, do_sample=False)
     return summary[0]['summary_text']
 
 def copy_text(text):
