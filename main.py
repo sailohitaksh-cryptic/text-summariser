@@ -22,7 +22,7 @@ if st.button("Summarize"):
         summary_text = summarize_text(user_input)
 
         # Display summarized text
-        st.text_area("Summarized Text", value=summary_text, height=200)
+        st.text_area("Summarized Text", value=summary_text)
 
         # Display length of article and summary
         st.write(f"Length of Summary: {len(summary_text.split(' '))}")
