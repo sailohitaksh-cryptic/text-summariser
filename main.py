@@ -11,6 +11,7 @@ st.title("Text Summarization App")
 
 # Text input field
 user_input = st.text_area("Enter the text to summarize")
+st.write(f"Length of Article: {len(user_input.split(' '))-1}")
 
 if st.button("Summarize"):
     if user_input:
@@ -21,7 +22,7 @@ if st.button("Summarize"):
         st.text(summary_text)
 
         # Display length of article and summary
-        st.write(f"Length of Article: {len(user_input.split(' '))}")
+        
         st.write(f"Length of Summary: {len(summary_text.split(' '))}")
 
         # Copy to clipboard
