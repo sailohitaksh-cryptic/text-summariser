@@ -1,6 +1,5 @@
 import streamlit as st
 from transformers import pipeline
-import pyperclip
 
 def summarize_text(article):
     summarizer = pipeline('summarization')
@@ -8,8 +7,8 @@ def summarize_text(article):
     return summary[0]['summary_text']
 
 def copy_text(text):
-    pyperclip.copy(text)
-    st.success("Text copied to clipboard")
+    st.experimental_set_query_params(copy=text)
+    st.info("Text copied to clipboard")
 
 
 st.title("Text Summarization App")
@@ -28,7 +27,13 @@ if st.button("Summarize"):
         # Display length of article and summary
         st.write(f"Length of Summary: {len(summary_text.split(' '))}")
 
-        # Copy to clipboard
-        st.button("Copy Summarized Text", on_click=copy_text, args=(summary_text,))
+         # Copy to clipboard
+        copy_text(summary_text)
+
+        # Retrieve copied text from query parameters
+        copied_text = st.experimental_get_query_params().get("copy", "")
+        if copied_text:
+            st.experimental_set_query_params()
+            st.experimental_rerun()
     else:
         st.warning("Please enter some text.")
