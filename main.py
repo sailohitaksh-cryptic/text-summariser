@@ -19,7 +19,7 @@ if st.button("Summarize"):
 
         # Display summarized text
         st.subheader("Summarized Text")
-        st.text(summary_text)
+        st.text_area("Summarised Text",summary_text)
 
         # Display length of article and summary
         
