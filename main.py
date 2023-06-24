@@ -3,7 +3,8 @@ from transformers import pipeline
 
 def summarize_text(article):
     summarizer = pipeline('summarization')
-    summary = summarizer(article, max_length=round((len(article.split(' ')))*0.50), min_length=30, do_sample=False)
+    max_length = round(len(article.split(' ')) * 0.5)
+    summary = summarizer(article, max_length=max_length, min_length=30, do_sample=False)
     return summary[0]['summary_text']
 
 def copy_text(text):
@@ -15,7 +16,7 @@ st.title("Text Summarization App")
 
 # Text input field
 user_input = st.text_area("Enter the text to summarize")
-st.write(f"Length of Article: {len(user_input.split(' '))}")
+st.write(f"Length of Article: {len(user_input.split(' '))-1}")
 
 if st.button("Summarize"):
     if user_input:
