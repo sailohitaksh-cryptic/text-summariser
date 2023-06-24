@@ -1,4 +1,2 @@
 transformers
 tensorflow
-pyperclip
-
