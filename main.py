@@ -7,7 +7,7 @@ def summarize_text(article):
     return summary[0]['summary_text']
 
 
-st.title("Text Summarization App")
+st.title("Text Tranformer")
 
 # Text input field
 user_input = st.text_area("Enter the text to summarize")
